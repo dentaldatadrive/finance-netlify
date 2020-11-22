@@ -1,0 +1,23 @@
+type User {
+    email: String! @unique
+    password: String!
+    firstname: String!
+    lastname: String!
+    preferences: [String!]
+}
+
+type Preference {
+    title: String! @unique
+    value: [String!]
+}   
+
+type Admin {
+    email: String! @unique
+    password: String!
+}
+    
+type Query {
+    allUsers: [User!]!
+    allPreferences: [Preference!]! 
+    allAdmins: [Admin!]!
+}
