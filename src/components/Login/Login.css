@@ -1,0 +1,70 @@
+.login {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.login form {
+    border: 1px solid black;
+    background: white;
+    padding-bottom: 10px;
+}
+
+.login input[type="radio"] {
+    display: none;
+}
+
+.login__options-wrapper {
+    margin-bottom: 10px;
+}
+
+.login__options-wrapper label {
+    width: 50%;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.login__options-wrapper input[type="radio"]:checked + label {
+    font-weight: bold;
+    background: whitesmoke;
+}
+
+.login__input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.login__input-wrapper label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.login__input-wrapper input {
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.login__actions-wrapper {
+    margin-top: 20px;   
+    text-align: center;
+}
+
+.login__actions-wrapper button {
+    background: transparent;
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 80px;
+}
+
+.login__actions-wrapper button:hover {
+    background: whitesmoke;
+    font-weight: bold;
+}

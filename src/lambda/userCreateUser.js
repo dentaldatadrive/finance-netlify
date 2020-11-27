@@ -1,12 +1,12 @@
-const { CREATE_USER } = require('./utils/userQueries.js');
+const { USER_CREATE_USER } = require('./utils/userQueries.js');
 const sendQuery = require('./utils/sendQuery');
 const formattedResponse = require('./utils/formattedResponse');
 exports.handler = async (event) => {
-    const { firstname, lastname, email, password, preferences } = JSON.parse(event.body);
-    const variables = { firstname, lastname, email, password, preferences };
+    const { firstname, lastname, email } = JSON.parse(event.body);
+    const variables = { firstname, lastname, email };
     try {
         const { createUser: createdUser } = await sendQuery(
-            CREATE_USER,
+            USER_CREATE_USER,
             variables
         );
 
