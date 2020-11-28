@@ -151,8 +151,10 @@ return (
             </div>
             {renderRestrictedContent()}
 
-            <button onClick={toggleFormEdit}>{formEditable? "Cancel" : "Edit"}</button>
-            {formEditable && <button onClick={updateUserInfo}>Submit</button>}
+            <div className="login__actions-wrapper">
+                <button className="button-secondary" onClick={toggleFormEdit}>{formEditable? "Cancel" : "Edit"}</button>
+                {formEditable && <button className="button-primary" onClick={updateUserInfo}>Submit</button>}
+            </div>
         </form>
     </div>
 )

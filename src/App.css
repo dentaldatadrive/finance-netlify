@@ -1,14 +1,48 @@
 main {
-    background: #e7e7e7;
-    height: 100vh;
     display: flex;
+    flex-direction: column;
+    height: calc(100vh - 100px);
 }
+
 body {
     font-family: 'Karla', sans-serif;
+    background: rgb(66,39,90);
+    background: linear-gradient(32deg, rgba(66,39,90,1) 0%, rgba(115,75,109,1) 100%);
+    min-height: 100vh;
+    color: white;
 }
 button {
     font-family: 'Karla', sans-serif;
+    color: white;
+    background: transparent;
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 90px;
 }
+
+input[disabled]{
+    background: rgb(52 44 84);
+    color: grey;
+}
+
+.button-primary {
+    background: rgb(66,39,90);
+}
+
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Poppins', sans-serif
+}
+input {
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    color: white;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 767px) {
+    .desktop-only {
+        display: none;
+    }
 }

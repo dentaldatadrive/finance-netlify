@@ -1,0 +1,15 @@
+.admin-view__user-data-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.admin-view__user-data-wrapper > div {
+    flex-basis: 25%;
+    min-width: 350px;
+}
+
+@media only screen and (max-width: 767px) {
+    .admin-view__user-data-wrapper {
+        justify-content: center;
+    }
+}

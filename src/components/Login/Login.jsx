@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+import 'font-awesome/css/font-awesome.min.css';
+
 import "./Login.css";
+
+
 
 function Login(props) {
 
@@ -51,11 +55,11 @@ function Login(props) {
                 <label htmlFor="admin">Admin</label>
             </div>
             <div className="login__input-wrapper">
-                <label>Username:</label>
+                <label aria-label="username"><i className="fa fa-user-circle"></i></label>
                 <input onChange={(e)=>setUsername(e.target.value)} type="text" name="username" value={username} id="username" placeholder="Username"/>
             </div>
             <div className="login__input-wrapper">
-                <label>Password:</label>
+                <label aria-label="password"><i className="fa fa-lock"></i></label>
                 <input onChange={(e)=>setPassword(e.target.value)} type="password" value={password} name="password" id="password" placeholder="Password"/>
             </div>
             <div className="login__actions-wrapper">

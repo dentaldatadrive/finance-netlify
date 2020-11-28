@@ -33,11 +33,11 @@ function AdminView() {
 
     return (
     <div className="admin-view">
-        {usersData && usersData.length > 0?  <ul> {usersData.map((item,key)=> { return (
-            <li key={key}> <UserInfo userData = {item} adminView={true}/></li>
+        {usersData && usersData.length > 0?  <div className="admin-view__user-data-wrapper"> {usersData.map((item,key)=> { return (
+            <div key={key}> <UserInfo userData = {item} adminView={true}/></div>
         )
             })}
-        </ul> :
+        </div> :
         <div>No users available</div>
     }
     </div>

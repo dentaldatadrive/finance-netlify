@@ -1,0 +1,42 @@
+header {
+    background: rgb(66,39,90);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.header__logo-wrapper__title {
+    font-family: 'Poppins';
+    font-size: 22px;
+}
+
+.header a {
+    font-family: 'Poppins';
+    font-size: 16px;
+    color: white;
+}
+
+.header__logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo-wrapper img {
+    max-height: 75px
+}
+
+.header__links-wrapper {
+    padding-right: 20px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 20%;
+    min-width: 150px;
+}
+
+.header__links-wrapper .fa {
+    font-size: 22px;
+}

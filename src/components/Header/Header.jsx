@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Header.css";
+import Logo from '../../images/logo.png';
 
 function Header(props) {
 
@@ -9,7 +10,16 @@ function Header(props) {
         
     return (
     <header className="header">
-        {props.userType? <button onClick={handleLogout}>Logout</button> : <a href="/">Login</a>}
+        <div className="header__logo-wrapper">
+            <span><img src={Logo} alt="Logo"/></span>
+            <span className="header__logo-wrapper__title desktop-only">Lorem Ipsum</span>
+        </div>
+        <div className="header__links-wrapper">
+            <i className="fa fa-bell"></i>
+            <i className="fa fa-search"></i>
+            {props.userType? <a href="/" onClick={handleLogout}>Logout</a> : <a href="/">Login</a>}
+
+        </div>
     </header>
   )
 }
