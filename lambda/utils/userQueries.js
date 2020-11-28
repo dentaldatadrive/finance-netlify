@@ -17,10 +17,48 @@ const GET_USERS = `
   }
 `;
 
+const LOGIN_USER = `
+  query($email: String!, $password: String!) {
+        loginUser( email: $email, password: $password) {
+            _id
+            firstname
+            lastname
+            email
+            password
+            userReadOnlyOne
+            userReadOnlyTwo
+            userReadOnlyThree
+        }
+  }
+`;
+
+const LOGIN_ADMIN = `
+  query($email: String!, $password: String!) {
+        loginAdmin( email: $email, password: $password) {
+            _id
+            firstname
+            lastname
+            email
+            password
+        }
+  }
+`;
+
+const CREATE_ADMIN = `
+    mutation( $firstname: String!, $lastname: String!, $email: String!, $password: String!) {
+        createAdmins( data: { firstname: $firstname, lastname: $lastname, email: $email, password: $password}) {
+          _id
+          firstname
+          lastname
+          email
+        }
+    }
+`;
+
 
 const USER_CREATE_USER = `
-    mutation( $firstname: String!, $lastname: String!, $email: String!) {
-        createUser( data: { firstname: $firstname, lastname: $lastname, email: $email, userReadOnlyOne: "user-read-only-1-value", 
+    mutation( $firstname: String!, $lastname: String!, $email: String!, $password: String!) {
+        createUsers( data: { firstname: $firstname, lastname: $lastname, email: $email, password: $password, userReadOnlyOne: "user-read-only-1-value", 
           userReadOnlyTwo: "user-read-only-2-value", userReadOnlyThree: "user-read-only-3-value", adminAccessOnlyOne: "default-admin-only-1", adminAccessOnlyTwo: "default-admin-only-2", 
           adminAccessOnlyThree: "default-admin-only-3"}) {
           _id
@@ -36,10 +74,10 @@ const USER_CREATE_USER = `
 
 
 const ADMIN_CREATE_USER = `
-    mutation( $firstname: String!, $lastname: String!, $email: String!, $userReadOnlyOne: String, 
+    mutation( $firstname: String!, $lastname: String!, $email: String!, $password: String! $userReadOnlyOne: String, 
       $userReadOnlyTwo: String, $userReadOnlyThree: String, $adminAccessOnlyOne: String, $adminAccessOnlyTwo: String, 
       $adminAccessOnlyThree: String) {
-        createUser( data: { firstname: $firstname, lastname: $lastname, email: $email, userReadOnlyOne: $userReadOnlyOne, 
+        createUsers( data: { firstname: $firstname, lastname: $lastname, email: $email, password: $password, userReadOnlyOne: $userReadOnlyOne, 
           userReadOnlyTwo: $userReadOnlyTwo, userReadOnlyThree: $userReadOnlyThree, adminAccessOnlyOne: $adminAccessOnlyOne, adminAccessOnlyTwo: $adminAccessOnlyTwo, 
           adminAccessOnlyThree: $adminAccessOnlyThree}) {
           _id
@@ -57,9 +95,8 @@ const ADMIN_CREATE_USER = `
 `;
 
 const USER_UPDATE_USER = `
-  mutation($id: ID!, $firstname: String!, $lastname: String!, $email: String!) {
-    updateUser( data: { $firstname: String!, $lastname: String!, $email: String!}) {
-      _id
+  mutation($id: ID!, $firstname: String!, $lastname: String!, $email: String!, $password: String!) {
+    updateUsers( id: $id data: { firstname: $firstname, lastname: $lastname, email: $email, password: $password}) {
       firstname
       lastname
       email
@@ -72,16 +109,17 @@ const USER_UPDATE_USER = `
 
 
 const ADMIN_UPDATE_USER = `
-  mutation($id: ID!, $firstname: String!, $lastname: String!, $email: String!, $userReadOnlyOne: String, 
+  mutation($id: ID!, $firstname: String!, $lastname: String!, $email: String!, $password: String!, $userReadOnlyOne: String, 
     $userReadOnlyTwo: String, $userReadOnlyThree: String, $adminAccessOnlyOne: String, $adminAccessOnlyTwo: String, 
     $adminAccessOnlyThree: String) {
-    updateUser( data: {  $firstname: String!, $lastname: String!, $email: String!, userReadOnlyOne: String, 
+    updateUser( data: {  $firstname: String!, $lastname: String!, $email: String!, $password: String!, userReadOnlyOne: String, 
       userReadOnlyTwo: String, userReadOnlyThree: String, adminAccessOnlyOne: String, adminAccessOnlyTwo: String, 
       adminAccessOnlyThree: String }) {
         _id
         firstname
         lastname
         email
+        password
         userReadOnlyOne
         userReadOnlyTwo
         userReadOnlyThree
@@ -103,7 +141,9 @@ const DELETE_USER = `
 
 module.exports = {
     GET_USERS,
+    LOGIN_USER,
     DELETE_USER,
+    CREATE_ADMIN,
     USER_CREATE_USER,
     ADMIN_CREATE_USER,
     USER_UPDATE_USER,

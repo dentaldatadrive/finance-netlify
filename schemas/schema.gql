@@ -1,8 +1,8 @@
-type User {
+type Users {
     email: String! @unique
-    password: String!
     firstname: String!
     lastname: String!
+    password: String!
     userReadOnlyOne: String
     userReadOnlyTwo: String
     userReadOnlyThree: String
@@ -11,13 +11,14 @@ type User {
     adminAccessOnlyThree: String
 }
 
-
-type Admin {
+type Admins {
     email: String! @unique
     password: String!
 }
     
 type Query {
-    allUsers: [User!]!
-    allAdmins: [Admin!]!
+    allUsers: [Users!]!
+    allAdmins: [Admins!]!
+    loginUser(email: String!, password: String!): Users
+    loginAdmin(email: String!, password: String!): Admins
 }

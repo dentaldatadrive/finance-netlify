@@ -1,25 +1,23 @@
-const axios = require('axios');
-require('dotenv').config();
-const { UPDATE_LINK } = require('./utils/userQueries.js');
+const { USER_UPDATE_USER } = require('./utils/userQueries.js');
 const sendQuery = require('./utils/sendQuery');
 const formattedResponse = require('./utils/formattedResponse');
 exports.handler = async (event) => {
     if (event.httpMethod !== 'PUT') {
         return formattedResponse(405, { err: 'Method not supported' });
     }
-    const { name, url, description, _id: id, archived } = JSON.parse(
+    const { firstname, lastname, password, email, _id: id } = JSON.parse(
         event.body
     );
-    const variables = { name, url, description, archived, id };
+    const variables = { firstname, lastname, password, email, id };
     try {
-        const { updateLink: updatedLink } = await sendQuery(
-            UPDATE_LINK,
+        const { updateUser: updatedUser } = await sendQuery(
+            USER_UPDATE_USER,
             variables
         );
-
-        return formattedResponse(200, updatedLink);
+        return formattedResponse(200, updatedUser);
     } catch (err) {
         console.error(err);
         return formattedResponse(500, { err: 'Something went wrong' });
     }
+
 };

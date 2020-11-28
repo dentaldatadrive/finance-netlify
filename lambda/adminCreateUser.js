@@ -2,9 +2,6 @@ const { ADMIN_CREATE_USER } = require('./utils/userQueries.js');
 const sendQuery = require('./utils/sendQuery');
 const formattedResponse = require('./utils/formattedResponse');
 
-// TODO:
-// Add admin account validation before firing off create user event;
-// 
 exports.handler = async (event) => {
     const {         
         firstname,
