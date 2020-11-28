@@ -10,7 +10,7 @@ function AdminView() {
     },[])
 
     function getAllUsers(){
-        let endpoint = "/api/getUsers";
+        let endpoint = "/.netlify/functions/getUsers";
 
         fetch(endpoint, {
             method: 'POST',

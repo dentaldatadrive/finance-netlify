@@ -47,7 +47,7 @@ function UserInfo(props) {
 
     function updateUserInfo(e) {
         e.preventDefault();
-        let endpoint = "/api/userUpdateUser";
+        let endpoint = "/.netlify/functions/userUpdateUser";
         let payload = {
             firstname: firstname, 
             lastname:lastname, 
@@ -57,7 +57,7 @@ function UserInfo(props) {
         };
 
         if(adminView) {
-            endpoint = "/api/adminUpdateUser";
+            endpoint = "/.netlify/functions/adminUpdateUser";
             payload.userReadOnlyOne = userReadOnlyOne;
             payload.userReadOnlyTwo = userReadOnlyTwo;
             payload.userReadOnlyThree = userReadOnlyThree;

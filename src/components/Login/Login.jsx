@@ -10,9 +10,9 @@ function Login(props) {
 
     function handleLogin(e) {
         e.preventDefault();
-        let endpoint = "/api/loginUser";
+        let endpoint = "/.netlify/functions/loginUser";
         if (loginType === "admin") {
-            endpoint = "/api/loginAdmin"
+            endpoint = "/.netlify/functions/loginAdmin"
         }
         fetch(endpoint, {
             method: 'POST',
