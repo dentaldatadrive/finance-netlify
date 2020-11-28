@@ -4,6 +4,7 @@ import UserView from "./components/UserView/UserView";
 
 import Login from "./components/Login/Login";
 import "./App.css";
+import Header from './components/Header/Header';
 
 
 function App() {
@@ -14,14 +15,14 @@ function App() {
   let mainContent = <Login setUserType={setUserType} setUserData={setUserData} />;
 
   if (userType === "admin") {
-    mainContent = <AdminView logout={setUserType}/>
+    mainContent = <AdminView adminUserData={userData}/>
   } else if (userType === "user") {
-    mainContent = <UserView logout={setUserType} setUserData={setUserData} userData={userData} />;
+    mainContent = <UserView setUserData={setUserData} userData={userData} />;
   }
 
     return (
     <div className="App">
-      <header className="App-header"></header>
+      <Header userData = {userData} logout={setUserData}/>
       <main>
         {mainContent}
       </main>

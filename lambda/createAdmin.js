@@ -1,4 +1,4 @@
-const { CREATE_ADMIN } = require('./utils/userQueries.js');
+const { CREATE_ADMIN } = require('./utils/adminQueries.js');
 const sendQuery = require('./utils/sendQuery');
 const formattedResponse = require('./utils/formattedResponse');
 exports.handler = async (event) => {
