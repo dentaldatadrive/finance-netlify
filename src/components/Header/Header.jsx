@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import "./Header.css";
 
 function Header(props) {
@@ -9,7 +9,7 @@ function Header(props) {
         
     return (
     <header className="header">
-        {props.userData.firstname && props.userData.firstname.length > 0? <a onClick={handleLogout}>Logout</a> : <a href="/">Login</a>}
+        {props.userType? <button onClick={handleLogout}>Logout</button> : <a href="/">Login</a>}
     </header>
   )
 }

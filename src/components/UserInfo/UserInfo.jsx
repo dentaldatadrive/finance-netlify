@@ -18,9 +18,7 @@ function UserInfo(props) {
 
     const [adminView, setAdminView] = useState();
 
-    useEffect(() => {
-        setDefaultValuesForProps();
-    },[props]);    
+    useEffect(setDefaultValuesForProps, [props]);    
 
     function setDefaultValuesForProps(){
         setFirstname(props.userData.firstname);

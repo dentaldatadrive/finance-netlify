@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import AdminView from "./components/AdminView/AdminView";
 import UserView from "./components/UserView/UserView";
 
@@ -22,7 +22,7 @@ function App() {
 
     return (
     <div className="App">
-      <Header userData = {userData} logout={setUserData}/>
+      <Header userData = {userData} userType = {userType} logout={setUserType}/>
       <main>
         {mainContent}
       </main>
