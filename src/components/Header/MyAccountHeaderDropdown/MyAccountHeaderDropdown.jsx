@@ -1,15 +1,7 @@
-import React, {useEffect, useState} from 'react';
+//import React, {useEffect, useState} from 'react';
 import "./MyAccountHeaderDropdown.css";
 
 function MyAccountHeaderDropdown(props) {
-
-
-
-    useEffect(()=>{
-
-    });
-
-
     return (
     <div className="myAccount-header-dropdown">
       <ul>
