@@ -13,7 +13,7 @@ function AdminView() {
         let endpoint = "/.netlify/functions/getUsers";
 
         fetch(endpoint, {
-            method: 'POST',
+            method: 'GET',
             headers: {
               'Content-Type': 'application/json',
             },

@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Header.css";
 import Logo from '../../images/logo.png';
+import UserHeaderMenu from './UserHeaderMenu/UserHeaderMenu';
 
 function Header(props) {
 
@@ -17,8 +18,8 @@ function Header(props) {
         <div className="header__links-wrapper">
             <i className="fa fa-bell"></i>
             <i className="fa fa-search"></i>
+            <UserHeaderMenu userData={props.userData}/>
             {props.userType? <a href="/" onClick={handleLogout}>Logout</a> : <a href="/">Login</a>}
-
         </div>
     </header>
   )

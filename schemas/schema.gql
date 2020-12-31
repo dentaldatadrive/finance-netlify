@@ -17,7 +17,7 @@ type Admins {
     firstname: String!
     lastname: String!
 }
-    
+
 type Query {
     allUsers: [Users!]!
     allAdmins: [Admins!]!

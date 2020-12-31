@@ -1,0 +1,12 @@
+.myAccount-header-dropdown {
+    display: none;
+    position: absolute;
+    border: 1px solid white;
+    width: 120px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.userMenu:hover .myAccount-header-dropdown {
+    display: block;
+}
